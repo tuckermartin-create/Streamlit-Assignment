@@ -6,17 +6,21 @@ again for verification, and displays order history.
 
 ## Application and repository links
 
-- Deployed application: **Not deployed yet — add the Streamlit Community Cloud URL here.**
+- Deployed application: https://app-assignment-jt3fmvdhwrvwdf4hmvxfdr.streamlit.app/
 - GitHub repository: https://github.com/tuckermartin-create/Streamlit-Assignment
 
 ## Supabase schema
 
-The app expects these tables and columns:
+The app expects these tables and columns. The classroom project was set up
+with fictional customers and products:
 
 - `customers`: `customer_id`, `customer_name`
 - `products`: `product_id`, `product_name`, `category`, `price`
 - `orders`: generated `order_id`, `customer_id`, `product_id`, `quantity`,
   `unit_price`, `order_date`
+
+Sample rows are Jordan Lee, Casey Morgan, and Taylor Rivera; products are
+Notebook, Fairfield Hoodie, Campus Mug, and Blue Pen Set.
 
 If the existing tables use different column names, update the corresponding
 queries in `database.py` and the matching column lookups in `app.py`. The
@@ -72,7 +76,8 @@ authentication system.
 
 ## Testing and screenshots
 
-**Deployment testing has not yet been completed.** Complete and record each
+**The hosted app is deployed, but Supabase secrets still need to be configured
+before end-to-end hosted testing can be completed.** Complete and record each
 test against the hosted application before submitting the assignment:
 
 | Test | Result |
