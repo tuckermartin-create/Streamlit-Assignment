@@ -50,8 +50,7 @@ Environment variables named `SUPABASE_URL`, `SUPABASE_KEY`, and
 3. Add `SUPABASE_URL`, `SUPABASE_KEY`, and `APP_PASSWORD` under the app's
    **Settings > Secrets**. Use only the fictional classroom database. Do not
    commit credentials or paste them into source files.
-4. Deploy, test the hosted URL, and replace the application-link placeholder
-   above with that URL.
+4. Deploy and test the hosted URL shown above.
 5. Provide the instructor the app password privately through the course
    submission system, or configure private viewer access.
 
@@ -76,26 +75,25 @@ authentication system.
 
 ## Testing and screenshots
 
-**The hosted app is deployed, but Supabase secrets still need to be configured
-before end-to-end hosted testing can be completed.** Complete and record each
-test against the hosted application before submitting the assignment:
+The hosted app has been tested with the fictional Supabase classroom data.
+The order-flow case that does not insert without confirmation was exercised
+locally with a mocked Supabase client; the deployed tests are recorded below.
 
 | Test | Result |
 |---|---|
-| Open hosted app with authorized access | Not tested |
-| Customers and products load from Supabase | Not tested |
-| Invalid quantity is prevented or rejected | Not tested |
-| Submit without confirmation creates no order | Not tested |
-| Confirmed order inserts exactly once | Not tested |
-| New order is retrieved in the verification table | Not tested |
-| Widget interaction does not insert a duplicate | Not tested |
-| Refresh shows the saved order in history | Not tested |
-| Customer filter and stored-price total work | Not tested |
+| Open hosted app with authorized access | Passed |
+| Customers and products load from Supabase | Passed; 3 customers and 4 products displayed |
+| Invalid quantity is prevented or rejected | Passed; number input enforces minimum 1 and whole-number steps |
+| Submit without confirmation creates no order | Passed locally with mocked Supabase; submission rejected |
+| Confirmed order inserts exactly once | Passed on hosted app; order ID 1, Jordan Lee, one Notebook, $4.50 |
+| New order is retrieved in the verification table | Passed; saved record displayed after a separate query by generated ID |
+| Widget interaction does not insert a duplicate | Passed on hosted app; Refresh Data retained the order and $4.50 total |
+| Refresh shows the saved order in history | Passed |
+| Customer filter and stored-price total work | Passed; filtering to Jordan Lee displayed the stored-price total of $4.50 |
 
-Add screenshots of the hosted order-entry interface and a successfully
-verified order here before submission. Ensure the screenshots contain no
-credentials. Do not submit this README as evidence of deployment testing
-until the tests have been run and the results updated.
+Screenshots are still required for submission. Save screenshots of the hosted
+order-entry interface and the successfully verified order in this repository,
+then link them here. Ensure they contain no credentials.
 
 ## Libraries and techniques
 
